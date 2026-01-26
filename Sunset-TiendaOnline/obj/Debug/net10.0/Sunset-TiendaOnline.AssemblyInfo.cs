@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Sunset-TiendaOnline")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+86c6beaa759d01dff963c5b9aa132dcfd8df96d0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+785b738d59607e1262b197404abe88c04fbbd5e5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Sunset-TiendaOnline")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Sunset-TiendaOnline")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
