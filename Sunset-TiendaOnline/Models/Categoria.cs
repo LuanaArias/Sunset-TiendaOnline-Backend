@@ -8,11 +8,8 @@ namespace Sunset_TiendaOnline.Models
         Pareo,
         Accesorios,
         Trikinis,
-
         Tankinis,
-
         PartesDeArriba,
-
         PartesDeAbajo
     }
 }

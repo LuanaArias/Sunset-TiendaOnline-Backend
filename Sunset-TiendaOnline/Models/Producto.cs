@@ -8,7 +8,7 @@ public class Producto
     public decimal Precio { get; set; }
     public int Stock { get; set; }
     public string Imagen { get; set; } = "";
-    public Dictionary<Talle, int> StockPorTalle { get; set; } = new();
+    public List<StockPorTalle> StockPorTalle { get; set; } = new();
     public Categoria Categoria { get; set; }
 
 }

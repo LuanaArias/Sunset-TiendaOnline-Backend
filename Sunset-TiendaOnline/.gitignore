@@ -11,3 +11,5 @@ project.nuget.cache
 
 # Visual Studio
 .vs/
+
+.env
