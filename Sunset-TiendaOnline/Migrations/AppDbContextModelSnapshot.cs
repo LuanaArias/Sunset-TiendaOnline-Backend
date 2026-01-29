@@ -117,13 +117,11 @@ namespace Sunset_TiendaOnline.Migrations
 
             modelBuilder.Entity("Sunset_TiendaOnline.Models.StockPorTalle", b =>
                 {
-                    b.HasOne("Sunset_TiendaOnline.Models.Producto", "Producto")
+                    b.HasOne("Sunset_TiendaOnline.Models.Producto", null)
                         .WithMany("StockPorTalle")
                         .HasForeignKey("ProductoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Producto");
                 });
 
             modelBuilder.Entity("Sunset_TiendaOnline.Models.Producto", b =>

@@ -11,8 +11,8 @@ using Sunset_TiendaOnline.Data;
 namespace Sunset_TiendaOnline.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260126215938_InitialEntities")]
-    partial class InitialEntities
+    [Migration("20260129183134_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -120,13 +120,11 @@ namespace Sunset_TiendaOnline.Migrations
 
             modelBuilder.Entity("Sunset_TiendaOnline.Models.StockPorTalle", b =>
                 {
-                    b.HasOne("Sunset_TiendaOnline.Models.Producto", "Producto")
+                    b.HasOne("Sunset_TiendaOnline.Models.Producto", null)
                         .WithMany("StockPorTalle")
                         .HasForeignKey("ProductoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Producto");
                 });
 
             modelBuilder.Entity("Sunset_TiendaOnline.Models.Producto", b =>
