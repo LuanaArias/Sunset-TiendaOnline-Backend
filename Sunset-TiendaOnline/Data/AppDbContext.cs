@@ -12,4 +12,13 @@ public class AppDbContext : DbContext
     public DbSet<Usuario> Usuarios => Set<Usuario>();
     public DbSet<StockPorTalle> StockPorTalle => Set<StockPorTalle>();
 
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<StockPorTalle>()
+            .HasOne<Producto>()
+            .WithMany(p => p.StockPorTalle)
+            .HasForeignKey(s => s.ProductoId)
+            .OnDelete(DeleteBehavior.Cascade);
+    }
+
 }

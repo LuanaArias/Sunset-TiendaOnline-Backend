@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 DotNetEnv.Env.Load();
 
-// para poder usar la bd
+//BASE DE DATOSS
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(
         $"Host={Environment.GetEnvironmentVariable("DB_HOST") ?? "localhost"};" +
@@ -16,8 +16,19 @@ builder.Services.AddDbContext<AppDbContext>(options =>
         $"Password={Environment.GetEnvironmentVariable("DB_PASSWORD") ?? "postgres"}"
     )
 );
+//CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy
+            .AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
 
-
+//CONTROLLERS
 builder.Services
     .AddControllers()
     .AddJsonOptions(options =>
@@ -37,6 +48,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("AllowFrontend");
 
 app.UseHttpsRedirection();
 
